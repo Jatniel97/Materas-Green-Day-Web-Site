@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2? family= Bungee+Shade &familia = PT+Sans & display=swap');
+
+
+
+
+body{
+	background-attachment: fixed;
+	font-family: 'PT sans', sans-serif ;
+	margin: 0;
+	padding: 0;
+
+	
+}
+
+header{
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.navegacion{
+	/* width: 1000px; */
+	/* margin:  auto; */
+	/* padding: 20px; */
+	background: rgb(216, 216, 216);
+	box-shadow: #33333386 7px 7px 7px;
+	margin: 0;
+	
+	
+	
+}
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+	margin: 10px;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #0a4708;
+	font-family: 'PT sans', sans-serif ;
+	text-decoration: none;
+	border: solid 1px rgba(0, 0, 0, 0.274);
+	border-radius: 10px 20px 10px 20px ;
+	font-weight: bold;
+	transition: all .5s ease;
+	
+}
+
+.menu li a:hover{
+	/* padding: 10px 5px 10px 5px ; */
+ /* border-radius:15px ; */
+
+
+	transition: all .4s;
+	background: aliceblue;
+	color: #389135;
+	
+	
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #333333c7;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 2.5s;
+	padding: 1px 20px 1px 20px;
+	border-radius: 15px;
+	
+}
+
+.submenu li a{
+	display: block;
+	padding: 10px;
+	color: rgb(0, 0, 0);
+	font-family: 'PT sans', sans-serif;
+	text-decoration: none;
+	border-radius: 20px;
+	background-color: rgb(188, 232, 245);
+	text-align: center;
+
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+/* -----------------Imagenes--------- */
+
+img{
+	width: 83px ;
+	height: 77px ;
+	position: absolute;
+	margin-left: 10px;
+}
+
+
+nav{
+	width: 100%;
+	display: flex;
+	
+	padding: 25px;
+
+}
+
+.logo{
+	font-size: 25px;
+	color: #000;
+	font-weight: 100;
+}
+
+
+.menu{
+	display: flex;
+}
+
+::selection{
+	background-color: #389135;
+	color: #ffff;
+}
+
+
+

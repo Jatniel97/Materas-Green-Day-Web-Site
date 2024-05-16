@@ -1,0 +1,58 @@
+.carousel-container {
+    width: 100%; /* Ancho completo de la ventana */
+    display: flex; /* Utilizamos flexbox para centrar el carrusel */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+  }
+  
+  .carousel {
+    overflow: hidden; /* Oculta las imágenes que sobrepasan el ancho del contenedor */
+    white-space: nowrap; /* Evita que las imágenes se envuelvan a la siguiente línea */
+    position: relative;
+  }
+  
+  .carousel img {
+    width: 300px; /* Ancho completo de cada imagen */
+    display: inline-block; /* Muestra las imágenes una al lado de la otra */
+    vertical-align: top; /* Alinea las imágenes en la parte superior */
+    box-shadow: rgba(0, 0, 0, 0.363) 7px 7px 7px 7px;
+
+  }
+  
+  /* Define la animación del carrusel */
+  @keyframes slide {
+    0% {
+        transform: translateX(0); /* Inicia desde la posición 0 */
+      }
+      100%{
+        transform: translateX(100%);
+      }
+      110% {
+        transform: translateX(125%); 
+      }
+      120%{
+        transform: translateX(140%);
+      }
+      90% {
+        transform: translateX(-100%); /* Vuelve a la posición inicial */
+      }
+      100% {
+        transform: translateX(0); /* Vuelve a la posición inicial */
+      }
+
+  }
+  
+  .carousel img:nth-child(1) {
+    animation: slide 8s infinite 2.5s; /* Inicia la animación en la primera imagen */
+  }
+  
+  .carousel img:nth-child(2) {
+    animation: slide 8s infinite 2.4s; /* Inicia la animación en la segunda imagen después de 2.5 segundos */
+  }
+  
+  .carousel img:nth-child(3) {
+    animation: slide 8s infinite 2.3s; /* Inicia la animación en la tercera imagen después de 5 segundos */
+  }
+  
+  
