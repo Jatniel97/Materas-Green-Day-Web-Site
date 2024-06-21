@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
-	
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
 /* div{
@@ -327,7 +328,7 @@ a{
 /* ----------------CARDS--------------- */
 
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 
 /*Cards*/
 .container-card{
@@ -479,8 +480,22 @@ font-size: 20px;
 
 .icono-facebook{
 	font-size: 30px;
-	color: #1977F3;
 	text-decoration: none;
+
+	/* Fallback: Set a background color. */
+	background-color: #3b5998;
+		
+	/* Create the gradient. */
+	background-image: linear-gradient(45deg, #3b5998 #ffffff);
+	
+	/* Set the background size and repeat properties. */
+	background-size: 100%;
+	background-repeat: repeat;
+  
+	/* Use the text as a mask for the background. */
+	/* This will show the gradient as a text color rather than element bg. */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 
 }
 
@@ -489,11 +504,33 @@ font-size: 30px;
 }
 
 
-.icono-instagram{
+.icono-instagram, .ionicon .s-ion-icon{
 	font-size: 30px;
-	color: rgb(218, 128, 38);
-	text-decoration: none;
 	
+		/* Fallback: Set a background color. */
+		background-color: red;
+		
+		/* Create the gradient. */
+		background-image: linear-gradient(45deg,#feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5 );
+		
+		/* Set the background size and repeat properties. */
+		background-size: 100%;
+		background-repeat: repeat;
+	  
+		/* Use the text as a mask for the background. */
+		/* This will show the gradient as a text color rather than element bg. */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		
+		
+		/* background:-moz-linear-gradient(top, #e72c83 0%, #a742c6 100%); 
+     background: -webkit-linear-gradient(top, #e72c83 0%,#a742c6 100%); 
+     background: linear-gradient(to bottom, #e72c83 0%,#a742c6 100%); */
+    -moz-background-clip: text;
+    background-clip: text;
+   
+
+		
 }
 
 
@@ -592,7 +629,8 @@ display: grid;
 	}
 
 	.cont-menu{
-		height: 950vh;
+		height: 100%;
+		width: 100%;
 	}
 
 	.cont-menu nav a{
@@ -634,7 +672,7 @@ display: grid;
 		margin: auto;
 	}
 
-/* ----------- Card's End ------------- */
+
 
 
 }
@@ -698,6 +736,38 @@ display: grid;
 	}
 }
 
+@media (width >= 446px){
+	
+	
+	.card img {
+		height: 363px;
+	}
+
+	.card{
+		
+		width: 100%;
+		margin: 20px;
+		border-radius: 6px;
+		overflow: hidden;
+		background: #fff;
+		box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+		transition: all 400ms ease-out;
+		cursor: default;
+		
+		align-items: center;
+	}
+
+	.container-card{
+		width: 70%;
+		display: flex;
+		/*  Eliminar para volver a la normalidad */
+		max-width: 960px;
+		margin: auto;
+	}
 }
 
 
+}
+
+
+/* ----------- Card's End ------------- */
