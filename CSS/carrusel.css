@@ -1,17 +1,9 @@
 .carousel-container {
     width: 100%; /* Ancho completo de la ventana */
-    
     display: flex; /* Utilizamos flexbox para centrar el carrusel */
     justify-content: center; /* Centra horizontalmente */
-    align-items: flex-start; /* Centra verticalmente */
-    /* height: 100vh; Altura completa de la ventana */
-    /* border: solid #70707093 5px; */
-    /* background-color: rgba(199, 199, 199, 0.616); */
-    /* box-shadow: #70707093 7px 7px 7px 7px; */
-    padding: 0px 0px 100px 0px;
-     
-
-
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
   }
   
   .carousel {
@@ -21,8 +13,7 @@
   }
   
   .carousel img {
-    width: 1000px; /* Ancho completo de cada imagen */
-    height: 500px;
+    width: 300px; /* Ancho completo de cada imagen */
     display: inline-block; /* Muestra las imágenes una al lado de la otra */
     vertical-align: top; /* Alinea las imágenes en la parte superior */
     box-shadow: rgba(0, 0, 0, 0.363) 7px 7px 7px 7px;
@@ -44,7 +35,7 @@
         transform: translateX(140%);
       }
       90% {
-        transform: translateX(-175%); /* Vuelve a la posición inicial */
+        transform: translateX(-100%); /* Vuelve a la posición inicial */
       }
       100% {
         transform: translateX(0); /* Vuelve a la posición inicial */
@@ -64,9 +55,4 @@
     animation: slide 8s infinite 2.3s; /* Inicia la animación en la tercera imagen después de 5 segundos */
   }
   
-  .MGD-Icon{
-    position: absolute;
-    height: 400px;
-    padding: 110px 5px 5px 5px;
-    
-  }
+  

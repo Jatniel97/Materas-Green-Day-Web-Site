@@ -20,19 +20,19 @@
 
 html, body {
     
-background-image:url(/imagenes/Fondo/Fondo.jpg) ;
+/* background-image:url(/imagenes/Fondo/Fondo.jpg) ; */
     
     
      /* background-position-x:center;
      background-position-y:center; */
 	 
-     background-size: 1390px;
-     background-repeat: no-repeat;
+     /* background-size: 1390px;
+     background-repeat: no-repeat; */
      
      width: 100%;
      height: 100%;
 
-	 background-size: contain;
+	 /* background-size: contain; */
 
 	 background-color: #f7f7d633;
 
@@ -736,7 +736,7 @@ display: grid;
 	}
 }
 
-@media (width >= 446px){
+@media (width <= 492px), (height <= 1000px){
 	
 	
 	.card img {
@@ -753,14 +753,14 @@ display: grid;
 		box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
 		transition: all 400ms ease-out;
 		cursor: default;
-		
+		display: block; /*Display: block; Original Cards.*/
 		align-items: center;
 	}
 
 	.container-card{
-		width: 70%;
+		width: 60%;
 		display: flex;
-		/*  Eliminar para volver a la normalidad */
+		
 		max-width: 960px;
 		margin: auto;
 	}
