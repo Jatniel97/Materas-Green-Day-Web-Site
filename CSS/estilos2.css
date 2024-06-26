@@ -736,7 +736,9 @@ display: grid;
 	}
 }
 
-@media (width <= 492px), (height <= 1000px){
+
+
+@media (width <= 492px), (height <= 854px){
 	
 	
 	.card img {
