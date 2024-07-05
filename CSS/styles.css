@@ -70,3 +70,35 @@
     padding: 110px 5px 5px 5px;
     
   }
+
+  /* Viewpoint in a moderm PC */
+
+@media screen {
+
+  @media (width >= 1920px), (height >= 1080px){
+
+    @keyframes slide {
+      0% {
+          transform: translateX(0); /* Inicia desde la posición 0 */
+        }
+        100%{
+          transform: translateX(100%);
+        }
+        110% {
+          transform: translateX(125%); 
+        }
+        120%{
+          transform: translateX(140%);
+        }
+        90% {
+          transform: translateX(-110%); /* Vuelve a la posición inicial */
+        }
+        100% {
+          transform: translateX(0); /* Vuelve a la posición inicial */
+        }
+  
+    }
+
+  }
+}
+  
