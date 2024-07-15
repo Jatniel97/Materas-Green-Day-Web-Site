@@ -43,7 +43,9 @@ html, body {
 	 }
 	
 
-	
+	 .day_green{
+		background-color: #206d31;
+	}
 
 	.capa{
 		position: fixed;
@@ -406,6 +408,10 @@ border-radius: 20px;
 	margin: 70px 0px 0px 0px;
 
 	text-align: center;
+
+	width: 500px;
+
+	margin-left: 100px;
 }
 
 .h02{
@@ -641,80 +647,198 @@ strong .descrip .h02{
 }
 	/* ------------------------------------------ */
 	
-	/* Carrusel de imagenes */
+	/* SLIDE */
+
+
+.slide-container{
+	position: relative;
+	width: 30%;
+	height: 380px;
+	border: 3px solid #ede6d6;
+	box-shadow: 0 0 8px 2px rgba(0,0,0,0.2);
+}
+.slide-container .slides{
+	width: 100%;
+	height: calc(100% - 40px);
+	position: relative;
+	overflow: hidden;
+}
+.slide-container .slides img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+}
+.slide-container .slides img:not(.active){
+	top: 0;
+	left: -100%;
+}
+span.next, span.prev{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 14px;
+	color: #eee;
+	font-size: 24px;
+	font-weight: bold;
+	transition: 0.5s;
+	border-radius: 3px;
+	user-select: none;
+	cursor: pointer;
+	z-index: 1;
+}
+span.next{
+	right: 20px;
+}
+span.prev{
+	left: 20px;
+}
+span.next:hover, span.prev:hover{
+	background-color: #ede6d6;
+	opacity: 0.8;
+	color: #000000;
+} 
+.dotsContainer{
+	position: absolute;
+	bottom: 5px;
+	z-index: 3;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.dotsContainer .dot{
+	width: 15px;
+	height: 15px;
+	margin: 0px 2px;
+	border: 3px solid #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	cursor: pointer;
+	transition: background-color 0.6s ease;
+}
+.dotsContainer .active{
+	background-color: #555;
+}
+
+@keyframes next1{
+	from{
+		left: 0%
+	}
+	to{
+		left: -100%;
+	}
+}
+@keyframes next2{
+	from{
+		left: 100%
+	}
+	to{
+		left: 0%;
+	}
+}
+
+@keyframes prev1{
+	from{
+		left: 0%
+	}
+	to{
+		left: 100%;
+	}
+}
+@keyframes prev2{
+	from{
+		left: -100%
+	}
+	to{
+		left: 0%;
+	}
+}
+
+.styles3-contenedor{
+	display: flex;
+	margin-bottom: 300px;
+	margin: 10px 0px 300px 170px;
+}
+
+@media screen {
+	@media (width >= 1920px), (height >= 1080px){
+
+		.h01{
+			width: 50%;
+		}
+
+		.slide-container{
+			width: 30%;
+			height: auto;
+		}
+
+	}
+}
+
+
+/* VIEW OF A PHONE */
+
+@media (width <= 892px), (height <= 854px){
 	
-	.C-img{
-		width: 100%;
-		height: 100%;
 	
+	.styles3-contenedor{
+		display: flex;
+        margin: 10px 10px 10px 4px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+		
 	}
 
-	.carrousel{
-		width: 100%;
-		
-	}
-	
-	.conteCarrousel{
-		width: 100%;
-		height: 500px;
-		overflow: hidden;
-	}
-	
-	.itemCarrousel{
+
+	.slide-container{
+		width: 300px;
 		position: relative;
-		width: 40%;
-		height: 500px;
+        height: 380px;
+        border: 3px solid #ede6d6;
+     	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+		margin: 0px 10px 10px 1px ;
 	}
-	
-	.itemCarrouselTarjeta{
-		width: 100%;
-		height: 100%;
+
+	.h01{
+		margin: 70px 0px 0px 0px;
+    	text-align: center;
+   		width: 300px;
+    	margin-left: 1px;
+		position: relative;
 	}
+}
+
+/* VIEW OF A TABLET */
+
+@media (width <= 492px), (height <= 854px){
 	
-	.itemCarrouselArrows{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100%;
-		width: 100%; 
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 20px; 
-	}
 	
-	.itemCarrouselArrows > i:hover {
-		cursor: pointer;
-	}
-	
-	#itemCarrousel-1{
-		background-color: rgb(226, 50, 50);
-	}
-	
-	#itemCarrousel-2{
-		background-color: rgb(50, 200, 226);
+	.styles3-contenedor{
+		display: block;
+		margin: 10px 10px 10px 40px;
 		
 	}
-	
-	#itemCarrousel-3{
-		background-color: rgb(200, 226, 50);
+
+
+	.slide-container{
+		width: 300px;
+		position: relative;
+        height: 380px;
+        border: 3px solid #ede6d6;
+     	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+		margin: 0px 10px 10px 1px ;
 	}
-	
-	.conteCarrouselController{
-		width: 40%;
-		display: flex;
-		justify-content: space-evenly;
-		background-color: #06681623;
+
+	.h01{
+		margin: 70px 0px 0px 0px;
+    	text-align: center;
+   		width: 300px;
+    	margin-left: 1px;
+		position: relative;
 	}
-	
-	.conteCarrouselController > a{
-		text-decoration: none;
-		font-size: 2em;
-		color: grey;
-	}
-	
-	.itemCarrouselArrows > a > i{
-		color: white;
-	}
+}
+
+
+
+
