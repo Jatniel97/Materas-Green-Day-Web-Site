@@ -44,7 +44,7 @@ html, body {
 	
 
 	 .day_green{
-		background-color: #206d31;
+		color: #206d31;
 	}
 
 	.capa{
@@ -685,13 +685,15 @@ span.next, span.prev{
 	border-radius: 3px;
 	user-select: none;
 	cursor: pointer;
-	z-index: 1;
+	z-index: auto;
 }
 span.next{
 	right: 20px;
+	z-index: auto;
 }
 span.prev{
 	left: 20px;
+	z-index: auto;
 }
 span.next:hover, span.prev:hover{
 	background-color: #ede6d6;
@@ -714,9 +716,11 @@ span.next:hover, span.prev:hover{
 	display: inline-block;
 	cursor: pointer;
 	transition: background-color 0.6s ease;
+	z-index: auto;
 }
 .dotsContainer .active{
 	background-color: #555;
+	z-index: auto;
 }
 
 @keyframes next1{
@@ -816,7 +820,7 @@ span.next:hover, span.prev:hover{
 	
 	.styles3-contenedor{
 		display: block;
-		margin: 10px 10px 10px 40px;
+		margin: 10px 10px 10px 27px;
 		
 	}
 
