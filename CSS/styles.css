@@ -101,4 +101,15 @@
 
   }
 }
+
+@media screen {
+  @media (width <=370px), (height <= 740px){
+    .MGD-Icon{
+      position: absolute;
+      height: 400px;
+      padding: 120px 5px 70px 5px;
+      
+    }
+  }
+}
   
