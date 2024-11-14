@@ -1,0 +1,57 @@
+
+/*VARIABLES*/
+
+:root{
+    --green-day-color: rgb(102, 140, 84);
+}
+
+/*VAR END*/
+
+.style{
+    text-align: center;
+    flex: content;
+    align-items: center;
+    padding-top: 120px;
+}
+.tittle1{
+    padding-bottom: 40px;
+}
+.tittle2{
+    padding-bottom: 40px ;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 30px;
+    color: var(--green-day-color);
+    transition: all 400ms ease;
+}
+.link:hover{
+    display: inline-block;
+    color: #ffffff;
+    padding: 5px;
+    margin-top: 5px;
+    border: solid 1px #678d55;
+    border-radius: 4px;
+    background-color: #678d55;
+    
+}
+.link:hover::after{
+    transition: all 0.3s ease;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+@media screen {
+    @media (width <= 892px), (height <= 854px){
+        body{
+            background-image: url(/Img/Fondo/Logo.png);
+            background-size: 100%;
+            background-position: 100%;
+        }
+    }
+}

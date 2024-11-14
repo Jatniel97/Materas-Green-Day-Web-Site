@@ -13,20 +13,10 @@
 }
 html,
 body {
-  /* background-image: url(/imagenes/Fondo/Fondo\ de\ pedido.jpg); */
-
-  /* background-position-x:center;
-		 background-position-y:center; */
 
   background-size: 100%;
   background-repeat: no-repeat;
 
-  /* width: 100%;
-		 height: 100%;
-	
-		 background-size: contain;
-	
-	 */
 
   font-size: 15px;
 
@@ -34,7 +24,7 @@ body {
 }
 
 .day_green {
-  color: #206d31;
+  background-color: #678d55ad;
 }
 
 .capa {
@@ -92,69 +82,11 @@ body {
   margin-right: 5px;
 }
 .container .menu a:hover {
-  border-bottom: 2px solid #206d31;
+  border-bottom: 2px solid #206d31c0;
   padding-bottom: 5px;
 }
 /*Fin de Estilos para el encabezado*/
 
-/*Menù lateral*/
-/* #btn-menu{
-		display: none;
-	}
-	.container-menu{
-		position: absolute;
-		background: rgba(0,0,0,0.5);
-		width: 100%;
-		height: 200vh;
-		top: 0;left: 0;
-		transition: all 500ms ease;
-		opacity: 0;
-		visibility: hidden;
-		z-index: 1;
-	}
-	#btn-menu:checked ~ .container-menu{
-		opacity: 1;
-		visibility: visible;
-	}
-	.cont-menu{
-		width: 100%;
-		max-width: 380px;
-		background: #1c1c1c;
-		height: 361vh;
-		position: fixed;
-		transition: all 500ms ease;
-		transform: translateX(-100%);
-		z-index: 1000;
-	}
-	#btn-menu:checked ~ .container-menu .cont-menu{
-		transform: translateX(0%);
-	}
-	.cont-menu nav{
-		transform: translateY(15%);
-	}
-	.cont-menu nav a{
-		display: block;
-		text-decoration: none;
-		padding: 15px;
-		color: #c7c7c7;
-		border-left: 5px solid transparent;
-		transition: all 400ms ease;
-	}
-	.cont-menu nav a:hover{
-		border-left: 5px solid #c7c7c7;
-		background: #1f1f1f;
-	}
-	.cont-menu label{
-		position: absolute;
-		right: 5px;
-		top: 10px;
-		color: #fff;
-		cursor: pointer;
-		font-size: 18px;
-	} */
-/*Fin de Menù lateral*/
-
-/*Menu lateral Experimental */
 
 #btn-menu {
   display: none;
@@ -203,7 +135,7 @@ body {
 }
 .cont-menu nav a:hover {
   border-left: 5px solid #c7c7c7;
-  background: #114900b4;
+  background: #678d55;
   color: #ffff;
   box-shadow: #33333386 0px 7px 7px;
 }
@@ -231,7 +163,7 @@ a:hover {
 }
 
 ::selection {
-  background-color: #389135;
+  background-color: #678d55;
   color: #ffff;
 }
 
@@ -268,11 +200,23 @@ a {
   border-radius: 20px 15px 20px 15px;
 }
 
+.titu-container{
+  padding-bottom: 150px;
+}
+
 .titu2 {
   font-size: 30px;
   color: white;
   text-align: center;
   margin: 0px 10px 190px 0px;
+}
+
+.description-nav{
+  padding-bottom: 60px;
+}
+
+.last-description{
+  padding-bottom: 180px;
 }
 
 /* -------------------------------------------- */
@@ -636,7 +580,7 @@ span.prev:hover {
 .dotsContainer {
   position: absolute;
   bottom: 5px;
-  z-index: 3;
+  z-index: -1;
   left: 50%;
   transform: translateX(-50%);
 }
