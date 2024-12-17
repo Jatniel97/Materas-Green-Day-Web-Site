@@ -65,7 +65,7 @@
 					<div>
 						<h4>Materas</h4>
 
-						<a class="tam" href="/Comprar/Hacer un pedidio.html">Como hacer un pedido</a>
+						<a class="tam" href="how_to_buy.html">Como hacer un pedido</a>
 						<a class="tam" href="contact_with_us.html">Contactanos</a>
 						<a class="tam" href="how_to_buy.html">Como comprar</a>
 
@@ -142,32 +142,59 @@
 			<p class="d-i"> <strong>Diseñamos y fabricamos materas en concreto impermiabilizadas con acabado liso</strong> </p>
 		</h1>
 
-		<div>
-			<ul id="replace-content-btn" class="homeSelect" >
-				<li class="customLi" >
-					<a href="">Velas</a>
-				</li>
-				<li class="customLi" >
-					<a href="">Combos</a>
-				</li>
-				<!-- <li>
-					<a href=""></a>
-				</li> -->
-				
-			</ul>
+<!-- Botones para cambiar contenido dinámico -->
+<div id="button" >
+	<ul class="homeSelect">
+		<li class="customButton">
+			<button onclick="loadContent('/Home/index.html')">Materas</button>
+		</li>
+		<li class="customButton velasButton">
+			<button class="velasButton" onclick="loadContent('Velas.html')">Velas</button>
+		</li>
+		<li class="customButton">
+			<button onclick="loadContent('Combos.html')">Combos</button>
+		</li>
+	</ul>
+</div>
+
+<br>
+<hr>
+<br>
+<br>
+<br>
+
+<!-- Contenido dinámico -->
+<div id="dynamic-content" class="js">
+	<div class="container-card">
+		<div class="card">
+			<figure>
+				<img src="/Img/Octagonal.jpg">
+			</figure>
+			<div class="contenido-card">
+				<h2>Octagonal</h2>
+				<a href="materas/octagonal.html">Ver más</a>
+			</div>
 		</div>
-
-		<br>
-		<hr>
-		<br>
-		<br>
-		<br>
-
-		<button id="replace-content-btn">Cargar Velas</button>
-
-		<div id="dynamic-section">
-
-			<div class="container-card">
+		<div class="card">
+			<figure>
+				<img src="/Img/Corazón.png">
+			</figure>
+			<div class="contenido-card">
+				<h2>Corazon</h2>
+				<a href="materas/Corazon.html">Ver más</a>
+			</div>
+		</div>
+		<div class="card">
+			<figure>
+				<img src="/Img/Tornillo.jpg">
+			</figure>
+			<div class="contenido-card">
+				<h2>Tornillo</h2>
+				<a href="materas/Tornillo.html">Ver más</a>
+			</div>
+		</div>
+	 </div>
+         <div class="container-card">
 		
 				<div class="card">
 					<figure>
@@ -368,6 +395,7 @@
 				</div>
 			</div>
 		</div>
+	</div>	
 		
 		
 
@@ -419,7 +447,9 @@
 
 
 
-<script ></script>
+	<script src="script.js"></script>
+	
+
 
 	<script type="module" src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "> </script>
 	<script nomodule src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "> </script>
