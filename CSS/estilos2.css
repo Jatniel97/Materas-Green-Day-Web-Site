@@ -13,6 +13,13 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* 
+.super_contenedor{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+} */
 
 html,
 body {
@@ -46,7 +53,7 @@ body {
 
 /*--------------Post-end----------------*/
 
-/*--------------Home Select-----------------*/
+/*-----------------------------Home Select---------------------------*/
 
 
 button{
@@ -58,7 +65,7 @@ button{
 
 .homeSelect button{
   text-decoration: none;
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
   
   color: #ffffff;
@@ -88,25 +95,83 @@ button{
   
   background-image: url(/Img/Velas/20240507_154206.jpg);
   transform: matrix();
-  
-  
 }
+
+.materasButton{
+  background-image: url(/Img/Materas/20240507_154206.jpg);
+  transform: matrix();
+}
+
+.combosButton{
+  background-image: url(/Img/Materas/20240507_154206.jpg);
+  transform: matrix();
+}
+
+
+/* Estilos generales */
+
+
+.container-button {
+  position: relative; /* Permite posicionar elementos hijos relativos a este contenedor */
+  display: inline-block; /* Ajusta el tamaño del contenedor al contenido */
+  text-align: center;
+}
+
+/* Estilos del botón */
+.btn-hover {
+  transition: background-color 0.3s;
+}
+
+
+/* Imagen oculta */
+.hidden-image {
+  position: absolute; 
+  top: 115%; /* Coloca la imagen justo debajo del botón */
+  left: 50%;
+  /* transform: translateX(-50%); Centra la imagen horizontalmente */
+  width: 300px; /* Tamaño de la imagen */
+  height: 600px;
+  opacity: 0; /* Oculta la imagen */
+  transition: opacity 1s ease; 
+  border-radius: 9px;
+  z-index: 1;
+}
+
+
+.btn-hover:hover + .hidden-image {
+  opacity: 1; 
+
+}
+
 
 @media screen {
   @media (width <= 500px){
     
     .homeSelect button {
-      font-size: 25px;
-      margin: 10px;
+      font-size: 20px;
+      margin: 6px;
+    }
+    .hidden-image{
+      top: 150%;
+    }
   }
+  /* @media (width >= 1500px), (height >= 1500px){
+    .hidden-image{
+      top: 100%;
+    }
+  } */
+}
+
+/* Ocultar la imagen en dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .hidden-image {
+      display: none !important;
   }
 }
 
 
 
-
-
-/*------------Home select end------------*/
+/*----------------------------Home select end-----------------------------*/
 
 .day_green {
   background-color: #678d55ad;
@@ -208,11 +273,11 @@ button{
   max-width: 380px;
   background: #1c1c1ccf;
   height: 361vh;
-  position: fixed;
+  position: sticky;
   transition: all 500ms ease;
   transform: translateX(-100%);
   z-index: 1000;
-  padding: 0px 50px 0px 50px;
+  padding: 0px 2px 0px 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -253,7 +318,8 @@ button{
   font-size: 18px;
 }
 
-/* Fin del menu lateral experimental */
+
+/* Fin del menu lateral */
 
 .navegacion {
   background: rgb(216, 216, 216);
@@ -272,7 +338,7 @@ a:hover {
   color: #ffff;
 }
 
-h4 {
+h3 {
   color: #678d55ad;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -283,7 +349,6 @@ h4 {
 .tam {
   font-size: 18px;
   text-align: center;
-  margin: 5px 0px 5px 0px;
 }
 
 .center {
@@ -315,7 +380,7 @@ a {
   font-size: 30px;
   color: #000000;
   text-align: center;
-  margin: 0px 10px 190px 0px;
+  margin: 0px 10px 100px 0px;
 }
 
 /* -------------------------------------------- */
@@ -324,26 +389,16 @@ a {
 
 /*Cards*/
 .container-card {
-  width: 60%;
   display: flex;
   flex-wrap: wrap;
-  /*Eliminar para volver a la normalidad*/
-  max-width: 960px;
-  margin: auto;
-}
-
-.title-cards {
-  width: 100%;
-  max-width: 1080px;
-  margin: auto;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
-  color: #7a7a7a;
+  justify-content: center;
+  gap: 20px; /* Espacio entre las cards */
+  margin: 20px auto;
+  max-width: 1200px; /* Ancho máximo del contenedor */
 }
 
 .card {
-  width: 100%;
+  width: 300px; /* Ancho fijo para las cards */
   margin: 20px;
   border-radius: 6px;
   overflow: hidden;
@@ -351,9 +406,8 @@ a {
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   transition: all 400ms ease-out;
   cursor: default;
-  /* display: flex;     
-    align-items: center; */
-  /*Remover linea 358 y 359 para volver a la normalidad*/
+  height: 690px; /* Altura fija para las cards */
+  
 }
 
 .card:hover {
@@ -363,7 +417,8 @@ a {
 
 .card img {
   width: 100%;
-  height: 430px;
+  height: 270px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Ajustar la imagen dentro del contenedor */
 }
 
 .card .contenido-card {
@@ -372,6 +427,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
 }
 
 .card .contenido-card h3 {
@@ -389,7 +445,7 @@ a {
 .card .contenido-card a {
   display: inline-block;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: auto; /* Empuja el enlace hacia abajo */
   text-decoration: none;
   color: #3ea50f;
   border: 1px solid #3ea50f;
@@ -706,13 +762,14 @@ a {
     }
   }
 
-  @media (width >=374px) {
+  @media (width >= 1200px), (height >1200){
     .card img {
-      height: 463px;
+      width: 390px;
+      height: 555px;
     }
 
     .card {
-      width: 100%;
+      width: 120%;
       margin: 20px;
       border-radius: 6px;
       overflow: hidden;
@@ -721,15 +778,18 @@ a {
       transition: all 400ms ease-out;
       cursor: default;
       display: flex;
+      flex-direction: column;
       align-items: center;
     }
 
     .container-card {
-      width: 60%;
+      width: 120%;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+
       /* Eliminar para volver a la normalidad */
-      max-width: 960px;
+      max-width: 1300px;
+      max-height: 850px;
       margin: auto;
     }
   }
@@ -761,8 +821,7 @@ a {
     }
   }
 
-  @media (width <=492px),
-  (height <=854px) {
+  @media (width <=492px), (height <=854px) {
     .card img {
       height: 363px;
     }
@@ -789,6 +848,24 @@ a {
       margin: auto;
     }
   }
+  @media (width <= 600px), (height <= 600px){
+    .card {
+      width: 300px; /* Ancho fijo para las cards */
+      margin: 20px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+      transition: all 400ms ease-out;
+      cursor: default;
+      height: 480px; /* Altura fija para las cards */
+      
+    }
+  }
 }
 
 /* ----------- Card's End ------------- */
+
+.no-scroll {
+  overflow: hidden;
+}
