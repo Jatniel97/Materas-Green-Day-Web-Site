@@ -63,24 +63,25 @@ button{
   padding-bottom: 7px;
 }
 
-.homeSelect button{
+..homeSelect button{
   text-decoration: none;
   font-size: 26px;
   text-align: center;
-  
   color: #ffffff;
   border: solid #08471b 2px;
   border-radius: 50px;
   background-color: #516d44;
-  margin: 50px;
+  margin: 0 18px;
+  padding: 12px 22px;
 }
 
 .homeSelect{
   list-style: none;
   display: flex;
-  list-style: none;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .homeSelect button:hover{
@@ -112,9 +113,30 @@ button{
 
 
 .container-button {
-  position: relative; /* Permite posicionar elementos hijos relativos a este contenedor */
-  display: inline-block; /* Ajusta el tamaño del contenedor al contenido */
-  text-align: center;
+  width: 100%;
+  display: flex; /* Centrar horizontalmente */
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1500; /* encima del carrusel para que los botones sean visibles */
+  margin-top: 1rem;
+}
+
+/* Botón que actúa como "volver" (estilo sutil) */
+.return-button {
+  border: 2px solid #08471b;
+  background-color: #f4f9f0;
+  color: #08471b;
+  transition: all .25s ease;
+}
+.return-button:hover { background-color: #eaf3e6; }
+
+
+.customButton {
+  position: relative; /* referencia para la imagen oculta */
+  display: inline-block;
 }
 
 /* Estilos del botón */
@@ -123,36 +145,39 @@ button{
 }
 
 
-/* Imagen oculta */
+/* Imagen oculta (posicionada respecto a .customButton) */
 .hidden-image {
   position: absolute; 
-  top: 115%; /* Coloca la imagen justo debajo del botón */
+  top: 115%; /* justo debajo del botón */
   left: 50%;
-  /* transform: translateX(-50%); Centra la imagen horizontalmente */
-  width: 300px; /* Tamaño de la imagen */
-  height: 600px;
-  opacity: 0; /* Oculta la imagen */
-  transition: opacity 1s ease; 
+  transform: translateX(-50%);
+  width: 320px; /* tamaño base */
+  max-width: 40vw;
+  max-height: 60vh;
+  object-fit: cover;
+  opacity: 0; /* oculta la imagen */
+  transition: opacity .35s ease, transform .35s ease; 
   border-radius: 9px;
-  z-index: 1;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
-
-.btn-hover:hover + .hidden-image {
-  opacity: 1; 
-
+/* Mostrar la imagen al hover del contenedor */
+.customButton:hover .hidden-image,
+.btn-hover:focus + .hidden-image {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 
 @media screen {
   @media (width <= 500px){
-    
     .homeSelect button {
       font-size: 20px;
       margin: 6px;
     }
     .hidden-image{
-      top: 150%;
+      display: none; /* Ocultamos en móviles por usabilidad */
     }
   }
   /* @media (width >= 1500px), (height >= 1500px){
@@ -291,7 +316,8 @@ button{
 
 .cont-menu nav {
   transform: translateY(15%);
-}
+  text-align: center; /* Centrar los items del menú */
+} 
 
 .cont-menu nav a {
   display: block;
@@ -382,6 +408,11 @@ a {
   text-align: center;
   margin: 0px 10px 100px 0px;
 }
+
+/* Centramos el HR y el texto que aparece debajo de los botones */
+hr { width: 80%; margin: 20px auto; border: none; border-top: 1px solid #ddd; }
+.p-final2, .d-i { text-align: center; }
+
 
 /* -------------------------------------------- */
 
@@ -488,21 +519,27 @@ a {
 /* -------------------COMPRAR------------- */
 
 .h01 {
-  float: right;
-
-  margin: 30px 0px 0px 600px;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .h02 {
+  display: inline-block;
   text-align: center;
-
   background-color: #4dbe49;
-  padding: 12px 40px;
+  padding: 12px 28px;
   border-radius: 15px;
   text-decoration: none;
   color: white;
-  margin: 0px 0px 0px 300px;
-  font-size: 25px;
+  margin: 12px auto;
+  font-size: 20px;
+}
+
+.h02:hover {
+  cursor: pointer;
+  background: #8ad487;
+  color: black;
+  transition: all 0.6s ease;
 }
 
 .h02:hover {

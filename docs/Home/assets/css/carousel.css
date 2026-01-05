@@ -1,3 +1,5 @@
+/* carousel.css — copia de Css/carrusel.css (canon) */
+
 /* Carousel full-screen y responsive (respetando el header) */
 
 .carousel-container {
@@ -89,3 +91,20 @@
   .carousel-img { max-height: calc(100vh - 120px); }
   .MGD-Icon { max-height: 220px; }
 }
+
+/* Migrated notes from Css/styles.css (legacy) */
+/*
+.carousel-container {
+    width: 100%; /* Ancho completo de la ventana */
+    display: flex; /* Utilizamos flexbox para centrar el carrusel */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: flex-start; /* Centra verticalmente */
+    padding: 0px 0px 100px 0px;
+}
+
+Legacy .carousel behavior removed — see Css/carrusel.css for canonical carousel rules
+Carousel image sizing moved to Css/carrusel.css (use .carousel-img).
+Keyframes removed — canonical animation defined in Css/carrusel.css
+Individual slide animation rules removed — use unified behavior from Css/carrusel.css
+Logo sizing removed from styles.css — canonical definition in Css/carrusel.css
+*/

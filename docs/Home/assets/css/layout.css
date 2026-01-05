@@ -1,0 +1,281 @@
+/* layout.css — Migrado desde ../Css/estilos3.css y ../Css/estilos.css (integridad completa) */
+/* === INICIO: contenido íntegro de estilos3.css === */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+
+  font-size: 15px;
+
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+/* Evitar que el contenido quede detrás del header fijo */
+body { padding-top: 100px; }
+
+
+/*------------POST---------------*/
+
+.postTittle{
+  padding-bottom: 15px;
+}
+
+.postLink{
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+}
+
+.postPadding1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+
+@media screen {
+  @media(width <= 500px){
+    .postPadding1{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      
+    }
+    .inframeSettings{
+      width: 90%;
+      height: 100%px;
+    }
+  }
+}
+
+/* .postLogo{
+  
+} */
+
+/*--------------Post-end----------------*/
+
+.day_green {
+  background-color: #678d55ad;
+}
+
+.capa {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+/*Estilos para el encabezado*/
+.header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000; /* aseguramos que el header quede por encima del carrusel y logo */
+} 
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container .btn-menu,
+.logo {
+  float: left;
+  line-height: 100px;
+}
+
+.container .btn-menu label {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logo h1 {
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-size: 22px;
+  margin-left: 10px;
+  display: unset;
+}
+
+.container .menu {
+  float: right;
+  line-height: 100px;
+}
+
+.container .menu a {
+  display: inline-block;
+  padding: 15px;
+  line-height: normal;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.container .menu a:hover {
+  border-bottom: 2px solid #206d31c0;
+  padding-bottom: 5px;
+}
+
+#btn-menu {
+  display: none;
+}
+
+.container-menu {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 361vh;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+#btn-menu:checked~.container-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cont-menu {
+  width: 100%;
+  max-width: 380px;
+  background: #1c1c1ccf;
+  height: 361vh;
+  position: fixed;
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+  z-index: 3000; /* elevar por encima del header fijo */
+  padding: 0px 2px 0px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+#btn-menu:checked~.container-menu .cont-menu {
+  transform: translateX(0%);
+}
+
+.cont-menu nav {
+  transform: translateY(15%);
+}
+
+.cont-menu nav a {
+  display: block;
+  text-decoration: none;
+  padding: 13.5px;
+  color: #f4f5f8;
+  border-left: 5px solid transparent;
+  transition: all 400ms ease;
+}
+
+.cont-menu nav a:hover {
+  border-left: 5px solid #c7c7c7;
+  background: #678d55;
+  color: #ffff;
+  box-shadow: #33333386 0px 7px 7px;
+}
+
+.cont-menu label {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Fin del menu lateral experimental */
+
+.navegacion {
+  background: rgb(216, 216, 216);
+  box-shadow: #33333386 7px 7px 7px;
+  position: sticky;
+  z-index: 1;
+}
+
+/* === FIN: contenido íntegro de estilos3.css === */
+
+/* === INICIO: contenido íntegro de estilos.css (adicionales) === */
+
+@import url('https://fonts.googleapis.com/css2? family= Bungee+Shade &familia = PT+Sans & display=swap');
+
+body{
+	background-attachment: fixed;
+	font-family: 'PT sans', sans-serif ;
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.navegacion{
+	background: rgb(216, 216, 216);
+	box-shadow: #33333386 7px 7px 7px;
+	margin: 0;
+}
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+	margin: 10px;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #0a4708;
+	font-family: 'PT sans', sans-serif ;
+	text-decoration: none;
+	border: solid 1px rgba(0, 0, 0, 0.274);
+	border-radius: 10px 20px 10px 20px ;
+	font-weight: bold;
+	transition: all .5s ease;
+}
+
+.menu li a:hover{
+	transition: all .4s;
+	background: aliceblue;
+	color: #389135;
+}
+
+/* === FIN: contenido íntegro de estilos.css === */

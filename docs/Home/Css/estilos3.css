@@ -90,7 +90,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-}
+  z-index: 2000; /* aseguramos que el header quede por encima del carrusel y logo */
+} 
 
 .container {
   width: 90%;

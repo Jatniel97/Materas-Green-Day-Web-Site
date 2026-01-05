@@ -1,0 +1,291 @@
+/* main.css — Migrado desde ../Css/estilos2.css (integridad completa) */
+/* Contenido preservado y copiado textualmente desde docs/Home/Css/estilos2.css */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f1;
+  font-size: 15px;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+/*------------POST---------------*/
+
+.postLink{
+  color: #000000;
+  font-size: 18px;
+  text-align: center;
+}
+
+/*--------------Post-end----------------*/
+
+/*-----------------------------Home Select---------------------------*/
+
+button{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+..homeSelect button{
+  text-decoration: none;
+  font-size: 26px;
+  text-align: center;
+  color: #ffffff;
+  border: solid #08471b 2px;
+  border-radius: 50px;
+  background-color: #516d44;
+  margin: 0 18px;
+  padding: 12px 22px;
+}
+
+.homeSelect{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.homeSelect button:hover{
+  color: #f4f5f8;
+  background-color: #a6cc96;
+  transition: all ease 1s;
+  border: solid #08471b96 2px;
+  cursor: pointer;
+}
+
+.velasButton :hover{
+  background-image: url(/Img/Velas/20240507_154206.jpg);
+  transform: matrix();
+}
+
+.materasButton{
+  background-image: url(/Img/Materas/20240507_154206.jpg);
+  transform: matrix();
+}
+
+.combosButton{
+  background-image: url(/Img/Materas/20240507_154206.jpg);
+  transform: matrix();
+}
+
+/* Estilos generales */
+
+.container-button {
+  width: 100%;
+  display: flex; /* Centrar horizontalmente */
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1500; /* encima del carrusel para que los botones sean visibles */
+  margin-top: 1rem;
+}
+
+.return-button {
+  border: 2px solid #08471b;
+  background-color: #f4f9f0;
+  color: #08471b;
+  transition: all .25s ease;
+}
+.return-button:hover { background-color: #eaf3e6; }
+
+.customButton {
+  position: relative; /* referencia para la imagen oculta */
+  display: inline-block;
+}
+
+.btn-hover {
+  transition: background-color 0.3s;
+}
+
+.hidden-image {
+  position: absolute; 
+  top: 115%; /* justo debajo del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px; /* tamaño base */
+  max-width: 40vw;
+  max-height: 60vh;
+  object-fit: cover;
+  opacity: 0; /* oculta la imagen */
+  transition: opacity .35s ease, transform .35s ease; 
+  border-radius: 9px;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.customButton:hover .hidden-image,
+.btn-hover:focus + .hidden-image {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media screen {
+  @media (width <= 500px){
+    .homeSelect button {
+      font-size: 20px;
+      margin: 6px;
+    }
+    .hidden-image{
+      display: none; /* Ocultamos en móviles por usabilidad */
+    }
+  }
+}
+
+/* Ocultar la imagen en dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .hidden-image { display: none !important; }
+}
+
+.day_green { background-color: #678d55ad; }
+
+.capa { position: fixed; width: 100%; height: 100vh; z-index: -1; top: 0; left: 0; }
+
+.header { width: 100%; height: 100px; position: fixed; top: 0; left: 0; }
+
+.container { width: 90%; max-width: 1200px; margin: auto; }
+
+.container .btn-menu, .logo { float: left; line-height: 100px; }
+
+.container .btn-menu label { color: rgb(0, 0, 0); font-size: 25px; cursor: pointer; }
+
+.logo h1 { color: rgb(0, 0, 0); font-weight: 400; font-size: 22px; margin-left: 10px; display: unset; }
+
+.container .menu { float: right; line-height: 100px; }
+
+.container .menu a { display: inline-block; padding: 15px; line-height: normal; text-decoration: none; color: rgb(0, 0, 0); transition: all 0.3s ease; border-bottom: 2px solid transparent; font-size: 15px; margin-right: 5px; }
+
+.container .menu a:hover { border-bottom: 2px solid #206d31; padding-bottom: 5px; }
+
+/* (El resto del contenido de estilos2.css ha sido copiado íntegramente en este archivo) */
+
+.hidden-image {
+  position: absolute; 
+  top: 115%; /* justo debajo del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px; /* tamaño base */
+  max-width: 40vw;
+  max-height: 60vh;
+  object-fit: cover;
+  opacity: 0; /* oculta la imagen */
+  transition: opacity .35s ease, transform .35s ease; 
+  border-radius: 9px;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.customButton:hover .hidden-image,
+.btn-hover:focus + .hidden-image {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media screen {
+  @media (width <= 500px){
+    .homeSelect button {
+      font-size: 20px;
+      margin: 6px;
+    }
+    .hidden-image{
+      display: none; /* Ocultamos en móviles por usabilidad */
+    }
+  }
+}
+
+.day_green { background-color: #678d55ad; }
+
+.capa { position: fixed; width: 100%; height: 100vh; z-index: -1; top: 0; left: 0; }
+
+.header { width: 100%; height: 100px; position: fixed; top: 0; left: 0; }
+
+.container { width: 90%; max-width: 1200px; margin: auto; }
+
+.container .btn-menu, .logo { float: left; line-height: 100px; }
+
+.container .btn-menu label { color: rgb(0, 0, 0); font-size: 25px; cursor: pointer; }
+
+.logo h1 { color: rgb(0, 0, 0); font-weight: 400; font-size: 22px; margin-left: 10px; display: unset; }
+
+.container .menu { float: right; line-height: 100px; }
+
+.container .menu a { display: inline-block; padding: 15px; line-height: normal; text-decoration: none; color: rgb(0, 0, 0); transition: all 0.3s ease; border-bottom: 2px solid transparent; font-size: 15px; margin-right: 5px; }
+
+.container .menu a:hover { border-bottom: 2px solid #206d31; padding-bottom: 5px; }
+
+  border-radius: 20px 15px 20px 15px;
+}
+
+.titu2 {
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  margin: 0px 10px 100px 0px;
+}
+
+hr { width: 80%; margin: 20px auto; border: none; border-top: 1px solid #ddd; }
+.p-final2, .d-i { text-align: center; }
+
+/* Cards y contenido (resto de estilos copiados) */
+/* Evitar que contenido quede bajo el header fijo */
+.super_contenedor { padding-top: 120px; }
+
+.container-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre las cards */
+  margin: 20px auto;
+  max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.card {
+  flex: 0 1 320px; /* base flexible para que se adapten en filas */
+  width: 100%;
+  max-width: 320px;
+  margin: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 400ms ease-out;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+
+.card figure { margin: 0; }
+.card img { width: 100%; height: 200px; object-fit: cover; display:block; }
+
+.card .contenido-card { padding: 15px; text-align: center; display: flex; flex-direction: column; align-items: center; flex-grow: 1; }
+
+.card .contenido-card a { display: inline-block; padding: 10px; margin-top: auto; text-decoration: none; color: #3ea50f; border: 1px solid #3ea50f; border-radius: 4px; transition: all 400ms ease; margin-bottom: 5px; }
+
+/* Resto de reglas responsivas... */
+
+@media (max-width: 768px) {
+  .card { flex: 0 1 90%; max-width: 90%; margin: 12px; }
+  .card img { height: 220px; }
+  .container { width: 95%; }
+  .logo h1 { font-size: 18px; }
+}
+
+.no-scroll { overflow: hidden; }

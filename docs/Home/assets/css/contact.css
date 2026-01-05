@@ -1,0 +1,9 @@
+/* contact.css — copy of original docs/Home/Css/contact.css */
+:root{ --green-day-color: rgb(102, 140, 84); }
+
+.style{ text-align: center; flex: content; align-items: center; padding-top: 120px; }
+.tittle1{ padding-bottom: 40px; }
+.tittle2{ padding-bottom: 40px ; }
+.link{ text-decoration: none; font-size: 30px; color: var(--green-day-color); transition: all 400ms ease; }
+.link:hover{ display: inline-block; color: #ffffff; padding: 5px; margin-top: 5px; border: solid 1px #678d55; border-radius: 4px; background-color: #678d55; }
+li{ list-style: none; }

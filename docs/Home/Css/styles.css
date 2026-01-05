@@ -14,102 +14,19 @@
 
   }
   
-  .carousel {
-    overflow: hidden; /* Oculta las imágenes que sobrepasan el ancho del contenedor */
-    white-space: nowrap; /* Evita que las imágenes se envuelvan a la siguiente línea */
-    position: relative;
-  }
+/* Legacy .carousel behavior removed — see Css/carrusel.css for canonical carousel rules */
   
-  .carousel img {
-    width: 1000px; /* Ancho completo de cada imagen */
-    height: 500px;
-    display: inline-block; /* Muestra las imágenes una al lado de la otra */
-    vertical-align: top; /* Alinea las imágenes en la parte superior */
-    box-shadow: rgba(0, 0, 0, 0.363) 7px 7px 7px 7px;
-
-  }
+/* Carousel image sizing moved to Css/carrusel.css (use .carousel-img). */
   
-  /* Define la animación del carrusel */
-  @keyframes slide {
-    0% {
-        transform: translateX(0); /* Inicia desde la posición 0 */
-      }
-      100%{
-        transform: translateX(100%);
-      }
-      110% {
-        transform: translateX(125%); 
-      }
-      120%{
-        transform: translateX(140%);
-      }
-      90% {
-        transform: translateX(-175%); /* Vuelve a la posición inicial */
-      }
-      100% {
-        transform: translateX(0); /* Vuelve a la posición inicial */
-      }
-
-  }
+/* Keyframes removed — canonical animation defined in Css/carrusel.css */
   
-  .carousel img:nth-child(1) {
-    animation: slide 8s infinite 2.5s; /* Inicia la animación en la primera imagen */
-  }
+/* Individual slide animation rules removed — use unified behavior from Css/carrusel.css */
   
-  .carousel img:nth-child(2) {
-    animation: slide 8s infinite 2.4s; /* Inicia la animación en la segunda imagen después de 2.5 segundos */
-  }
-  
-  .carousel img:nth-child(3) {
-    animation: slide 8s infinite 2.3s; /* Inicia la animación en la tercera imagen después de 5 segundos */
-  }
-  
-  .MGD-Icon{
-    position: absolute;
-    height: 400px;
-    padding: 110px 5px 5px 5px;
-    
-  }
+/* Logo sizing removed from styles.css — canonical definition in Css/carrusel.css */
 
   /* Viewpoint in a moderm PC */
 
-@media screen {
+/* Legacy high-res keyframes removed; animation centralized in Css/carrusel.css */
 
-  @media (width >= 1920px), (height >= 1080px){
-
-    @keyframes slide {
-      0% {
-          transform: translateX(0); /* Inicia desde la posición 0 */
-        }
-        100%{
-          transform: translateX(100%);
-        }
-        110% {
-          transform: translateX(125%); 
-        }
-        120%{
-          transform: translateX(140%);
-        }
-        90% {
-          transform: translateX(-110%); /* Vuelve a la posición inicial */
-        }
-        100% {
-          transform: translateX(0); /* Vuelve a la posición inicial */
-        }
-  
-    }
-
-  }
-}
-
-@media screen {
-  @media (width <=370px), (height <= 740px){
-    .MGD-Icon{
-      position: absolute;
-      height: 400px;
-      padding: 120px 5px 70px 5px;
-      
-    }
-  }
-}
+/* Legacy small-screen override for .MGD-Icon removed; responsive behavior is handled in Css/carrusel.css */
   
