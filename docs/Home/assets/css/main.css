@@ -1,6 +1,27 @@
 /* main.css — Migrado desde ../Css/estilos2.css (integridad completa) */
 /* Contenido preservado y copiado textualmente desde docs/Home/Css/estilos2.css */
 
+:root {
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+  --section-space: var(--spacing-lg);
+  --bg: #ffffff;
+  --text: #263626;
+}
+
+/* Utilidades de espaciado */
+.section { padding: var(--section-space) 0; }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mt-1 { margin-top: var(--spacing-sm); }
+.spacer { height: var(--spacing-md); display:block; }
+
+/* Ajustes menores para contenedores */
+.container-card { gap: 1.25rem; }
+
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
