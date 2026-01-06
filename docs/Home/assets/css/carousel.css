@@ -2,24 +2,22 @@
 
 /* Carousel full-screen y responsive (respetando el header) */
 
-.carousel-container {
-  width: 100vw;
-  height: calc(100vh - 100px); /* dejar espacio para la barra superior */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding-top: 100px; /* empuja el contenido debajo del header */
-  box-sizing: border-box;
-  overflow: hidden;
+.carousel-container{ width:100vw; height:calc(100vh - 100px); display:flex; justify-content:center; align-items:center; margin:0; padding-top:100px; box-sizing:border-box; overflow:hidden; position:relative; }
+.carousel-container::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  /* overlay con tonos basados en --primary para mejor armonía */
+  background: linear-gradient(180deg, rgba(47,123,53,0.18) 0%, rgba(47,123,53,0.08) 40%, rgba(47,123,53,0.28) 100%);
+  pointer-events: none;
+  z-index: 0;
 }
+.carousel{ width:100%; height:100%; overflow:hidden; position:relative; }
 
-.carousel {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
+/* Zoom lento en slides (desktop) */
+@media (min-width:800px){ .carousel-inner .carousel-img{ transform-origin:center; animation: imageZoom 14s linear infinite; } @keyframes imageZoom{ 0%{ transform:scale(1); } 50%{ transform:scale(1.04); } 100%{ transform:scale(1);} } }
+
+.MGD-Icon{ z-index:2; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.3)); }
 
 .carousel-inner {
   display: flex;
@@ -92,13 +90,13 @@
   .MGD-Icon { max-height: 220px; }
 }
 
-/* Migrated notes from Css/styles.css (legacy) */
+/* Migrated notes from Css/styles.css (legacy) 
 /*
 .carousel-container {
-    width: 100%; /* Ancho completo de la ventana */
-    display: flex; /* Utilizamos flexbox para centrar el carrusel */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: flex-start; /* Centra verticalmente */
+    width: 100%; /* Ancho completo de la ventana 
+    display: flex; /* Utilizamos flexbox para centrar el carrusel 
+    justify-content: center; /* Centra horizontalmente 
+    align-items: flex-start; /* Centra verticalmente 
     padding: 0px 0px 100px 0px;
 }
 
@@ -108,3 +106,67 @@ Keyframes removed — canonical animation defined in Css/carrusel.css
 Individual slide animation rules removed — use unified behavior from Css/carrusel.css
 Logo sizing removed from styles.css — canonical definition in Css/carrusel.css
 */
+
+/* styles3 slide implementation (copied from ../Css/estilos3.css) */
+.styles3-contenedor {
+  display: flex;
+  margin-bottom: 300px;
+  margin: 10px 0px 300px 170px;
+}
+
+.slide-container {
+  position: relative;
+  width: 30%;
+  height: 380px;
+  border: 3px solid #ede6d6;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.slide-container .slides {
+  width: 100%;
+  height: calc(100% - 40px);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-container .slides img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+
+.slide-container .slides img:not(.active) {
+  top: 0;
+  left: -100%;
+}
+
+span.next,
+span.prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 14px;
+  color: #eee;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.5s;
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+  z-index: auto;
+}
+
+span.next { right: 20px; z-index: auto; }
+span.prev { left: 20px; z-index: auto; }
+
+span.next:hover, span.prev:hover { background-color: #ede6d6; opacity: 0.8; color: #000000; }
+
+.dotsContainer { position: absolute; bottom: 5px; z-index: -1; left: 50%; transform: translateX(-50%); }
+.dotsContainer .dot { width: 15px; height: 15px; margin: 0px 2px; border: 3px solid #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.6s ease; z-index: auto; }
+.dotsContainer .active { background-color: #555; z-index: auto; }
+
+@keyframes next1 { from { left: 0%; } to { left: -100%; } }
+@keyframes next2 { from { left: 100%; } to { left: 0%; } }
+@keyframes prev1 { from { left: 0%; } to { left: 100%; } }
+@keyframes prev2 { from { left: -100%; } to { left: 0%; } }

@@ -5,6 +5,22 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
 
+:root {
+  --bg: #fbf9f4;
+  --surface: #ffffff;
+  --primary: #2f7b35;
+  --primary-600: #1f5a2a;
+  --accent: #e6a23c;
+  --muted: #6b8067;
+  --text: #162b17;
+  --muted-text: #445c3f;
+  --card-radius: 12px;
+  --spacing-lg: 32px;
+  --spacing-md: 18px;
+  --spacing-sm: 12px;
+  --container-width: 1200px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -98,7 +114,7 @@ body { padding-top: 100px; }
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: auto;
 }
 
@@ -109,13 +125,13 @@ body { padding-top: 100px; }
 }
 
 .container .btn-menu label {
-  color: rgb(0, 0, 0);
+  color: var(--text);
   font-size: 25px;
   cursor: pointer;
 }
 
 .logo h1 {
-  color: rgb(0, 0, 0);
+  color: var(--text);
   font-weight: 400;
   font-size: 22px;
   margin-left: 10px;
@@ -132,12 +148,12 @@ body { padding-top: 100px; }
   padding: 15px;
   line-height: normal;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
   font-size: 15px;
   margin-right: 5px;
-}
+} 
 
 .container .menu a:hover {
   border-bottom: 2px solid #206d31c0;
@@ -150,71 +166,161 @@ body { padding-top: 100px; }
 
 .container-menu {
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  /* overlay suave con blur para destacar el menú */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
   width: 100%;
-  height: 361vh;
+  height: 100vh;
   top: 0;
   left: 0;
-  transition: all 500ms ease;
+  transition: opacity 300ms ease, visibility 300ms ease;
   opacity: 0;
   visibility: hidden;
-  z-index: 1;
+  z-index: 4100;
+  pointer-events: none;
 }
 
 #btn-menu:checked~.container-menu {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .cont-menu {
   width: 100%;
-  max-width: 380px;
-  background: #1c1c1ccf;
-  height: 361vh;
+  max-width: 340px;
+  /* Degradado elegante y contraste */
+  background: linear-gradient(180deg, #0f2b18 0%, #18321e 35%, #1c1c1c 100%);
+  color: #f4f5f8;
+  height: 100vh;
   position: fixed;
-  transition: all 500ms ease;
+  left: 0;
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1);
   transform: translateX(-100%);
-  z-index: 3000; /* elevar por encima del header fijo */
-  padding: 0px 2px 0px 2px;
+  z-index: 4200; /* elevar por encima del header fijo */
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
-  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-y: auto;
+  box-shadow: 6px 0 26px rgba(0,0,0,0.5);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 #btn-menu:checked~.container-menu .cont-menu {
-  transform: translateX(0%);
+  transform: translateX(0);
+}
+
+/* Branding en la parte superior del menu */
+.cont-menu .menu-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cont-menu .menu-brand .brand-title{
+  font-weight: 700;
+  color: #e9f4e9;
+  font-size: 18px;
+}
+.cont-menu .menu-brand .brand-sub{
+  color: #9fb99a;
+  font-size: 13px;
 }
 
 .cont-menu nav {
-  transform: translateY(15%);
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.cont-menu nav a {
+/* Estilo de enlaces con icono simple y animación al abrir */
+.cont-menu nav a{
   display: block;
   text-decoration: none;
-  padding: 13.5px;
-  color: #f4f5f8;
-  border-left: 5px solid transparent;
-  transition: all 400ms ease;
+  padding: 14px 12px;
+  color: #e9f4e9;
+  border-left: 4px solid transparent;
+  background: transparent;
+  transition: all 220ms ease;
+  font-size: 16px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(-10px);
 }
 
-.cont-menu nav a:hover {
-  border-left: 5px solid #c7c7c7;
-  background: #678d55;
-  color: #ffff;
-  box-shadow: #33333386 0px 7px 7px;
+/* Pequeña animación por orden usando nth-child */
+#btn-menu:checked~.container-menu .cont-menu nav a:nth-child(1){ animation: menuItem 260ms ease .06s forwards; }
+#btn-menu:checked~.container-menu .cont-menu nav a:nth-child(2){ animation: menuItem 300ms ease .08s forwards; }
+#btn-menu:checked~.container-menu .cont-menu nav a:nth-child(3){ animation: menuItem 340ms ease .10s forwards; }
+#btn-menu:checked~.container-menu .cont-menu nav a:nth-child(4){ animation: menuItem 380ms ease .12s forwards; }
+#btn-menu:checked~.container-menu .cont-menu nav a:nth-child(5){ animation: menuItem 420ms ease .14s forwards; }
+
+@keyframes menuItem{ to { opacity: 1; transform: translateX(0); } }
+
+.cont-menu nav a:hover{
+  border-left-color: #a6cf8a;
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  transform: translateX(4px);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
 }
 
+/* CTA destacado */
+.cont-menu .cta{
+  display: inline-block;
+  margin-top: 10px;
+  background: linear-gradient(90deg,#d8f5d3,#9ed089);
+  color:#083a10;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Botón de cierre visible y con estilo */
 .cont-menu label {
   position: absolute;
-  right: 5px;
-  top: 10px;
+  right: 12px;
+  top: 12px;
   color: #fff;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
+  background: rgba(255,255,255,0.06);
+  padding: 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
+/* Scrollbar sutil */
+.cont-menu::-webkit-scrollbar{ width: 8px; }
+.cont-menu::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.06); border-radius: 8px; }
+
+/* Ajustes para móviles */
+@media (max-width: 420px){
+  .cont-menu{ max-width: 100%; padding: 18px; border-radius: 0; }
+  .cont-menu .menu-brand .brand-title{ font-size: 16px; }
+}
+
+
+/* Ocultar los enlaces del header en pantallas pequeñas */
+@media (max-width: 800px) {
+  .container .menu { display: none; }
+  .logo h1 { font-size: 20px; }
+  /* Hacer visible el botón de menú (hamburger) en móviles */
+  .container .btn-menu label { display: inline-block; font-size: 26px; line-height: normal; }
+}
+
+/* Ajustes adicionales para muy pequeños */
+@media (max-width: 420px) {
+  .cont-menu nav a { font-size: 15px; padding: 12px 10px; }
+  .container .btn-menu label { font-size: 22px; }
+}
+
 
 /* Fin del menu lateral experimental */
 
