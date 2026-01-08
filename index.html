@@ -72,38 +72,46 @@
             </svg>
           </label>
         </div>
-      </div>
+      </div>    
+            <!-- Carousel V2 START -->
 
-      <nav class="carousel-container">
-        <div class="carousel">
-          <div class="carousel-inner">
-            <img
-              class="carousel-img"
-              src="docs/Img/Fondo/Fondo de pedido.jpg"
-              alt="Imagen 1"
-            />
-            <img
-              class="carousel-img"
-              src="docs/Img/Fondo/Fondo.jpg"
-              alt="Imagen 2"
-            />
-            <img
-              class="carousel-img"
-              src="docs/Img/Fondo/Fondo3.jpg"
-              alt="Imagen 3"
-            />
-          </div>
-        </div>
-        <img class="MGD-Icon" src="docs/Img/Fondo/Logo.png" alt="" />
+      <nav style="padding-bottom: 70px;">
+        <div class="slide-container" style="width: 100%; height: 480px; padding-top: none; margin-top: none;border: none; box-shadow: none;">
+
+			<div class="slides">
+				<img src="docs/Img/Fondo/Fondo de pedido.jpg" class="active" style="position: relative;">
+				<img src="docs/Img/Fondo/Fondo.jpg">
+				<img src="docs/Img/Fondo/Fondo3.jpg">
+				<img src="docs/Img/Fondo/Logo.png">
+				<img src="docs/Img/QR cuidado suculenta.png">
+			</div>
+
+			<div class="buttons">
+				<span class="next">&#10095;</span>
+				<span class="prev">&#10094;</span>
+			</div>
+
+			<div class="dotsContainer">
+				<div class="dot active" attr='0' onclick="switchImage(this)"></div>
+				<div class="dot" attr='1' onclick="switchImage(this)"></div>
+				<div class="dot" attr='2' onclick="switchImage(this)"></div>
+				<div class="dot" attr='3' onclick="switchImage(this)"></div>
+				<div class="dot" attr='4' onclick="switchImage(this)"></div>
+			</div>
+
+		</div>
       </nav>
 
-      <h1 class="titu2"><strong>¡Bienvenidos a Materas Green Day!</strong></h1>
+        <!-- Carousel V2 END -->
+      <div>
+        <img class="MGD-Icon" src="docs/Img/Fondo/Logo.png" alt="" />
+        <h1 class="titu2"><strong>¡Bienvenidos a Materas Green Day!</strong></h1>
       <p class="d-i">
         <strong
           >Diseñamos y fabricamos materas en concreto impermiabilizadas con
-          acabado liso</strong
-        >
+          acabado liso</strong>
       </p>
+      </div>
 
       <!-- Botones para cambiar contenido dinámico -->
       <div id="container-button" class="container-button">

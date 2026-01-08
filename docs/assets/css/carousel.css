@@ -49,16 +49,16 @@
 
 /* Logo centrado y no tan grande */
 .MGD-Icon {
-  position: absolute;
+  /* position: absolute; */
   left: 50%;
   top: 60%; /* bajar un poco para que no traspase la barra */
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   max-height: 160px;
   width: auto;
   height: auto;
-  opacity: 0.98;
-  pointer-events: none;
-  z-index: 0; /* debajo del header (header tiene z-index mayor) */
+  /* opacity: 0.98; */
+  /* pointer-events: none; */
+  /* z-index: 0; debajo del header (header tiene z-index mayor) */
 }
 
 @media (max-width: 768px) {
@@ -146,7 +146,7 @@ span.prev { left: 20px; z-index: auto; }
 
 span.next:hover, span.prev:hover { background-color: #ede6d6; opacity: 0.8; color: #000000; }
 
-.dotsContainer { position: absolute; bottom: 5px; z-index: -1; left: 50%; transform: translateX(-50%); }
+.dotsContainer { position: absolute; bottom: 5px; z-index: 1; left: 50%; transform: translateX(-50%); }
 .dotsContainer .dot { width: 15px; height: 15px; margin: 0px 2px; border: 3px solid #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.6s ease; z-index: auto; }
 .dotsContainer .active { background-color: #555; z-index: auto; }
 
@@ -154,3 +154,4 @@ span.next:hover, span.prev:hover { background-color: #ede6d6; opacity: 0.8; colo
 @keyframes next2 { from { left: 100%; } to { left: 0%; } }
 @keyframes prev1 { from { left: 0%; } to { left: 100%; } }
 @keyframes prev2 { from { left: -100%; } to { left: 0%; } }
+
