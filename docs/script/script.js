@@ -10,11 +10,11 @@ function loadContent(page) {
         './' + normalized,
         lower,
         './' + lower,
-        'Home/' + normalized,
-        '/Home/' + normalized,
-        '/docs/Home/' + normalized,
+        'docs/' + normalized,
+        '/docs/' + normalized,
+        '/docs/' + normalized,
         '../' + normalized,
-        '../Home/' + normalized,
+        '../docs/' + normalized,
         '../../' + normalized
     ];
 
