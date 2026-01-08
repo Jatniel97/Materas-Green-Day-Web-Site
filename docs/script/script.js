@@ -270,3 +270,4 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof initCarousel === 'function') {
     // expose for calls after dynamic loads
 }
+

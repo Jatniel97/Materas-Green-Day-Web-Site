@@ -5,6 +5,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
 
+
 :root {
   --bg: #fbf9f4;
   --surface: #ffffff;
@@ -246,7 +247,7 @@ body { padding-top: 100px; }
   transition: all 220ms ease;
   font-size: 16px;
   border-radius: 8px;
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateX(-10px);
 }
 
@@ -325,7 +326,7 @@ body { padding-top: 100px; }
 /* Fin del menu lateral experimental */
 
 .navegacion {
-  background: rgb(216, 216, 216);
+  background: #fdf0dcbd;
   box-shadow: #33333386 7px 7px 7px;
   position: sticky;
   z-index: 1;
@@ -334,8 +335,6 @@ body { padding-top: 100px; }
 /* === FIN: contenido íntegro de estilos3.css === */
 
 /* === INICIO: contenido íntegro de estilos.css (adicionales) === */
-
-@import url('https://fonts.googleapis.com/css2? family= Bungee+Shade &familia = PT+Sans & display=swap');
 
 body{
 	background-attachment: fixed;
@@ -351,9 +350,9 @@ header{
 }
 
 .navegacion{
-	background: rgb(216, 216, 216);
-	box-shadow: #33333386 7px 7px 7px;
-	margin: 0;
+	  background: #fcf4e8;
+  	box-shadow: #33333386 7px 7px 7px;
+	  margin: 0;
 }
 
 .navegacion ul{

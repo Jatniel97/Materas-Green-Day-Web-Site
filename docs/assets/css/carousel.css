@@ -1,13 +1,12 @@
-/* carousel.css — copia de Css/carrusel.css (canon) */
+/* Carousel*/
 
-/* Carousel full-screen y responsive (respetando el header) */
 
-.carousel-container{ width:100vw; height:calc(100vh - 100px); display:flex; justify-content:center; align-items:center; margin:0; padding-top:100px; box-sizing:border-box; overflow:hidden; position:relative; }
+
+.carousel-container{ width:100vw; height:calc(100vh - 100px); display:flex; justify-content:center; align-items:center; margin:0; box-sizing:border-box; overflow:hidden; }
 .carousel-container::before{
   content: "";
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  /* overlay con tonos basados en --primary para mejor armonía */
   background: linear-gradient(180deg, rgba(47,123,53,0.18) 0%, rgba(47,123,53,0.08) 40%, rgba(47,123,53,0.28) 100%);
   pointer-events: none;
   z-index: 0;
@@ -33,7 +32,7 @@
 /* Usar la clase específica .carousel-img para controlar tamaño y evitar reglas conflictivas */
 .carousel-inner { align-items: center; }
 .carousel-img {
-  flex: 0 0 100%;
+  /* flex: 0 0 100%; */
   display: block;
   width: auto !important;            /* forzar que no ocupe todo el ancho */
   max-width: 90% !important;        /* limitar anchura para evitar imágenes gigantes */
@@ -63,22 +62,25 @@
 }
 
 @media (max-width: 768px) {
-  .MGD-Icon { top: 58%; max-height: 120px; }
+  /* .MGD-Icon { top: 58%; max-height: 120px; } */
+  .carousel-inner{ animation-play-state: paused; }
+  
 }
 
 @keyframes slide {
   0%   { transform: translateX(0%); }
   33%  { transform: translateX(0%); }
-  44%  { transform: translateX(-100%); }
-  77%  { transform: translateX(-100%); }
-  88%  { transform: translateX(-200%); }
+  44%  { transform: translateX(-33.5%); }
+  70%  { transform: translateX(-33.5%); }
+  77%  { transform: translateX(-67.5%); }
+  95%  { transform: translateX(-67.5%); }
  100%  { transform: translateX(-200%); }
 }
 
 /* Ajustes por dispositivo */
 @media (max-width: 1024px) {
   .carousel-img { max-height: calc(50vh); max-width: 95%; }
-  .MGD-Icon { display: none; }
+  /* .MGD-Icon { display: none; } */
 }
 
 @media (max-width: 480px) {
@@ -90,24 +92,6 @@
   .MGD-Icon { max-height: 220px; }
 }
 
-/* Migrated notes from Css/styles.css (legacy) 
-/*
-.carousel-container {
-    width: 100%; /* Ancho completo de la ventana 
-    display: flex; /* Utilizamos flexbox para centrar el carrusel 
-    justify-content: center; /* Centra horizontalmente 
-    align-items: flex-start; /* Centra verticalmente 
-    padding: 0px 0px 100px 0px;
-}
-
-Legacy .carousel behavior removed — see Css/carrusel.css for canonical carousel rules
-Carousel image sizing moved to Css/carrusel.css (use .carousel-img).
-Keyframes removed — canonical animation defined in Css/carrusel.css
-Individual slide animation rules removed — use unified behavior from Css/carrusel.css
-Logo sizing removed from styles.css — canonical definition in Css/carrusel.css
-*/
-
-/* styles3 slide implementation (copied from ../Css/estilos3.css) */
 .styles3-contenedor {
   display: flex;
   margin-bottom: 300px;

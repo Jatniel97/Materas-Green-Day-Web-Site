@@ -1,5 +1,8 @@
-/* main.css — Migrado desde ../Css/estilos2.css (integridad completa) */
-/* Contenido preservado y copiado textualmente desde docs/Home/Css/estilos2.css */
+/* main.css*/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 :root {
   --spacing-xs: 0.5rem;
@@ -7,7 +10,7 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 3rem;
   --section-space: var(--spacing-lg);
-  --bg: #ffffff;
+  --bg: #f3e7d069;
   --text: #263626;
 }
 
@@ -20,11 +23,6 @@
 
 /* Ajustes menores para contenedores */
 .container-card { gap: 1.25rem; }
-
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap");
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 * {
   margin: 0;
@@ -105,12 +103,7 @@ button{
   background-image: url(../Img/Materas/20240507_154206.jpg);
   transform: matrix();
 }
-
-.combosButton{
-  background-image: url(../Img/Materas/20240507_154206.jpg);
-  transform: matrix();
-}
-
+/*-----------------------------Home Select End---------------------------*/
 /* Estilos generales */
 
 .container-button {
@@ -201,6 +194,10 @@ button{
 
 .container .menu a:hover { border-bottom: 2px solid #206d31; padding-bottom: 5px; }
 
+.js{
+  padding-bottom: 150px;
+}
+
 /* (El resto del contenido de estilos2.css ha sido copiado íntegramente en este archivo) */
 
 .hidden-image {
@@ -225,18 +222,6 @@ button{
   transform: translateX(-50%) translateY(0);
 }
 
-@media screen {
-  @media (width <= 500px){
-    .homeSelect button {
-      font-size: 20px;
-      margin: 6px;
-    }
-    .hidden-image{
-      display: none; /* Ocultamos en móviles por usabilidad */
-    }
-  }
-}
-
 .day_green { background-color: #678d55ad; }
 
 .capa { position: fixed; width: 100%; height: 100vh; z-index: -1; top: 0; left: 0; }
@@ -258,6 +243,12 @@ button{
 .container .menu a:hover { border-bottom: 2px solid #206d31; padding-bottom: 5px; 
 
   border-radius: 20px 15px 20px 15px;
+}
+
+.cont-menu-tittle{
+  margin-bottom: 12px;
+  color: white;
+  font-weight: 600;
 }
 
 /* Forzar ocultamiento de enlaces del header en móviles y mostrar el botón de menú */
@@ -308,7 +299,7 @@ hr { width: 80%; margin: 20px auto; border: none; border-top: 1px solid #ddd; }
   .logo h1 { font-size: 18px; }
 }
 
-/* Center main content elements and harmonize spacing */
+
 .super_contenedor, .hero-content, .container-card, .redes { text-align: center; }
 .titu2, .d-i, .contenido-card h2 { margin-bottom: var(--spacing-sm); }
 h1, h2, h3, p { margin-bottom: var(--spacing-sm); }
